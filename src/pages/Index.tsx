@@ -24,15 +24,21 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // When element is visible, add fade-in animation and make it visible
           entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
+    // Select all sections but set them to initially visible
+    // This prevents the black screen issue
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
+      // If section doesn't have animation class already
       if (!section.classList.contains('animate-fade-in')) {
+        // Set initial opacity to 0 but don't make it invisible
         section.classList.add('opacity-0');
         observer.observe(section);
       }
