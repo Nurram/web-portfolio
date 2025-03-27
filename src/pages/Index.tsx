@@ -32,19 +32,22 @@ const Index = () => {
       });
     }, observerOptions);
 
-    // Select all sections but set them to initially visible
-    // This prevents the black screen issue
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-      // If section doesn't have animation class already
-      if (!section.classList.contains('animate-fade-in')) {
-        // Set initial opacity to 0 but don't make it invisible
-        section.classList.add('opacity-0');
-        observer.observe(section);
-      }
-    });
+    // Wait a bit to ensure the DOM is fully rendered before applying animations
+    // This prevents the flash of invisible content
+    setTimeout(() => {
+      // Select all sections but set them to initially visible
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        // If section doesn't have animation class already
+        if (!section.classList.contains('animate-fade-in')) {
+          section.classList.add('opacity-0');
+          observer.observe(section);
+        }
+      });
+    }, 100);
 
     return () => {
+      const sections = document.querySelectorAll('section');
       sections.forEach(section => {
         observer.unobserve(section);
       });
