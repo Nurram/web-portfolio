@@ -1,36 +1,7 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Experience = () => {
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach(item => {
-      item.classList.add('opacity-0');
-      observer.observe(item);
-    });
-
-    return () => {
-      timelineItems.forEach(item => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
-
   return (
     <section id="experience" className="bg-dark-bg relative">
       {/* Background effect */}
