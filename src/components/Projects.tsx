@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, PlayStore } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { 
   Tooltip,
@@ -22,7 +21,8 @@ const Projects = () => {
         "Optimized Garuda Miles rewards management"
       ],
       technology: "Flutter",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1"
+      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png",
+      playstoreLink: "https://play.google.com/store/apps/developer?id=Nurramware"
     },
     {
       id: 2,
@@ -77,7 +77,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="bg-dark-bg relative">
-      {/* Background effect */}
       <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxQzFDMUUiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNNTAgMEgwdjUwaDUwVjB6TTAgMHYxMGgxMFYwSDB6bTEwIDIwSDB2MTBoMTBWMjB6bS0xMCAyMHYxMGgxMFY0MEgwek0yMCAwdjEwaDEwVjBIMjB6bTEwIDIwSDIwdjEwaDEwVjIwem0tMTAgMjB2MTBoMTBWNDBIMjB6TTQwIDB2MTBoMTBWMEg0MHptMTAgMjBINDB2MTBoMTBWMjB6bS0xMCAyMHYxMGgxMFY0MEg0MHoiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
       
       <div className="container mx-auto relative z-10">
@@ -102,7 +101,19 @@ const Projects = () => {
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
                         {project.title}
-                        <ExternalLink className="w-4 h-4 text-blue-accent" />
+                        <div className="flex items-center space-x-2">
+                          {project.playstoreLink && (
+                            <a 
+                              href={project.playstoreLink} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:text-blue-accent"
+                            >
+                              <PlayStore className="w-4 h-4" />
+                            </a>
+                          )}
+                          <ExternalLink className="w-4 h-4 text-blue-accent" />
+                        </div>
                       </CardTitle>
                       <CardDescription className="text-dark-secondary">
                         {project.description}
@@ -131,7 +142,6 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Project Detail Dialog */}
       <Dialog open={selectedProject !== null} onOpenChange={(open) => !open && setSelectedProject(null)}>
         {selectedProject && (
           <DialogContent className="bg-dark-surface border-dark-elevated max-w-3xl max-h-[80vh] overflow-y-auto">
