@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, PlayStore } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { 
   Tooltip,
@@ -109,10 +109,9 @@ const Projects = () => {
                               rel="noopener noreferrer"
                               className="hover:text-blue-accent"
                             >
-                              <PlayStore className="w-4 h-4" />
+                              <ExternalLink className="w-4 h-4" />
                             </a>
                           )}
-                          <ExternalLink className="w-4 h-4 text-blue-accent" />
                         </div>
                       </CardTitle>
                       <CardDescription className="text-dark-secondary">
