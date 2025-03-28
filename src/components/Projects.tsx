@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from 'lucide-react';
@@ -22,8 +21,7 @@ const Projects = () => {
         "Optimized Garuda Miles rewards management"
       ],
       technology: "Flutter",
-      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png",
-      playstoreLink: "https://play.google.com/store/apps/developer?id=Nurramware"
+      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png"
     },
     {
       id: 2,

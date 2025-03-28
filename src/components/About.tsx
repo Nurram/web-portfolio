@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 
 const About = () => {
   return (
@@ -56,6 +56,19 @@ const About = () => {
               <h3 className="text-lg font-medium mb-2">Problem Solving</h3>
               <p className="text-dark-secondary text-sm">Dedicated to finding elegant solutions to complex programming challenges</p>
             </div>
+          </div>
+          
+          {/* Play Store Link */}
+          <div className="mt-10 flex justify-center">
+            <a 
+              href="https://play.google.com/store/apps/developer?id=Nurramware" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-accent/10 text-blue-accent hover:bg-blue-accent/20 transition-colors"
+            >
+              <ExternalLink className="w-5 h-5" />
+              <span>Check out my work on Play Store</span>
+            </a>
           </div>
         </div>
       </div>
