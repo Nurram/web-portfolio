@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from 'lucide-react';
@@ -33,7 +34,7 @@ const Projects = () => {
         "Geolocation tracking with timestamp verification"
       ],
       technology: "Flutter",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+      image: "https://i.ibb.co.com/zWnZmtH2/sam.jpg"
     },
     {
       id: 3,
@@ -59,7 +60,7 @@ const Projects = () => {
         "Secure e-wallet top-up functionality"
       ],
       technology: "Flutter (Mobile), Laravel (Web Admin)",
-      image: "https://images.unsplash.com/photo-1542838132-92c53300491e"
+      image: "https://i.ibb.co.com/fz8pCZ6L/Pasar-Mini-Mbok-Dhe.jpg"
     },
     {
       id: 5,
@@ -71,7 +72,7 @@ const Projects = () => {
         "Multimedia learning resources with audio and video content"
       ],
       technology: "Flutter (Mobile), Firebase (NoSQL Database)",
-      image: "https://images.unsplash.com/photo-1493836512294-502baa1986e2"
+      image: "https://i.ibb.co.com/FkXsnPcM/Mentari-Assesment.jpg"
     }
   ];
 
@@ -172,6 +173,20 @@ const Projects = () => {
               <h3 className="text-xl font-semibold text-dark-text mb-2">Technology Stack</h3>
               <p className="text-dark-secondary">{selectedProject.technology}</p>
             </div>
+
+            {selectedProject.playstoreLink && (
+              <div className="mt-6">
+                <a 
+                  href="https://play.google.com/store/apps/developer?id=Nurramware" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-accent hover:underline"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>View on Play Store</span>
+                </a>
+              </div>
+            )}
           </DialogContent>
         )}
       </Dialog>
