@@ -5,7 +5,7 @@ const Skills = () => {
   const skills = [
     {
       category: "Mobile Development",
-      items: ["Flutter", "Kotlin", "Java", "Android SDK", "iOS Development"]
+      items: ["Flutter", "Jetpack Compose", "Kotlin", "Java", "Android SDK", "iOS Development"]
     },
     {
       category: "Web Development",
