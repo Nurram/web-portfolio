@@ -26,7 +26,7 @@ const Experience = () => {
                 <ul className="list-disc list-inside text-dark-secondary space-y-1.5">
                   <li>Developed and maintained mobile applications using Flutter</li>
                   <li>Implemented native features using Kotlin and Java when needed</li>
-                  <li>Created RESTful APIs with PHP Laravel for backend services</li>
+                  <li>Created Websites and RESTful APIs with PHP Laravel</li>
                   <li>Optimized database queries in both SQL and NoSQL environments</li>
                   <li>Collaborated with design teams to create intuitive user interfaces</li>
                 </ul>
