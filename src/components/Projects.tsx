@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from 'lucide-react';
@@ -21,7 +22,8 @@ const Projects = () => {
         "Optimized Garuda Miles rewards management"
       ],
       technology: "Flutter",
-      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png"
+      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png",
+      playstoreLink: "https://play.google.com/store/apps/details?id=com.garudaindonesia.flygaruda"
     },
     {
       id: 2,
@@ -32,7 +34,8 @@ const Projects = () => {
         "Geolocation tracking with timestamp verification"
       ],
       technology: "Flutter",
-      image: "https://i.ibb.co.com/zWnZmtH2/sam.jpg"
+      image: "https://i.ibb.co.com/zWnZmtH2/sam.jpg",
+      playstoreLink: null
     },
     {
       id: 3,
@@ -45,7 +48,8 @@ const Projects = () => {
         "Real-time location tracking between drivers and crew"
       ],
       technology: "Flutter",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      playstoreLink: null
     },
     {
       id: 4,
@@ -58,7 +62,8 @@ const Projects = () => {
         "Secure e-wallet top-up functionality"
       ],
       technology: "Flutter (Mobile), Laravel (Web Admin)",
-      image: "https://i.ibb.co.com/fz8pCZ6L/Pasar-Mini-Mbok-Dhe.jpg"
+      image: "https://i.ibb.co.com/fz8pCZ6L/Pasar-Mini-Mbok-Dhe.jpg",
+      playstoreLink: "https://play.google.com/store/apps/details?id=com.nurramware.sarminimbokdhe"
     },
     {
       id: 5,
@@ -70,7 +75,8 @@ const Projects = () => {
         "Multimedia learning resources with audio and video content"
       ],
       technology: "Flutter (Mobile), Firebase (NoSQL Database)",
-      image: "https://i.ibb.co.com/FkXsnPcM/Mentari-Assesment.jpg"
+      image: "https://i.ibb.co.com/FkXsnPcM/Mentari-Assesment.jpg",
+      playstoreLink: "https://play.google.com/store/apps/details?id=com.nurramware.mentariAssessment"
     }
   ];
 
