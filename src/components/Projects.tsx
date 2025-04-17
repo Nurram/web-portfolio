@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { 
   Tooltip,
@@ -23,7 +21,7 @@ const Projects = () => {
       ],
       technology: "Flutter",
       image: "https://i.ibb.co.com/dwWz0NWY/flyga.png",
-      playstoreLink: "https://play.google.com/store/apps/details?id=com.garudaindonesia.flygaruda"
+      playstoreLink: null
     },
     {
       id: 2,
@@ -63,7 +61,7 @@ const Projects = () => {
       ],
       technology: "Flutter (Mobile), Laravel (Web Admin)",
       image: "https://i.ibb.co.com/fz8pCZ6L/Pasar-Mini-Mbok-Dhe.jpg",
-      playstoreLink: "https://play.google.com/store/apps/details?id=com.nurramware.sarminimbokdhe"
+      playstoreLink: null
     },
     {
       id: 5,
@@ -76,7 +74,7 @@ const Projects = () => {
       ],
       technology: "Flutter (Mobile), Firebase (NoSQL Database)",
       image: "https://i.ibb.co.com/FkXsnPcM/Mentari-Assesment.jpg",
-      playstoreLink: "https://play.google.com/store/apps/details?id=com.nurramware.mentariAssessment"
+      playstoreLink: null
     }
   ];
 
@@ -106,18 +104,6 @@ const Projects = () => {
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
                         {project.title}
-                        <div className="flex items-center space-x-2">
-                          {project.playstoreLink && (
-                            <a 
-                              href={project.playstoreLink} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="hover:text-blue-accent"
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                          )}
-                        </div>
                       </CardTitle>
                       <CardDescription className="text-dark-secondary">
                         {project.description}
@@ -177,20 +163,6 @@ const Projects = () => {
               <h3 className="text-xl font-semibold text-dark-text mb-2">Technology Stack</h3>
               <p className="text-dark-secondary">{selectedProject.technology}</p>
             </div>
-
-            {selectedProject.playstoreLink && (
-              <div className="mt-6">
-                <a 
-                  href="https://play.google.com/store/apps/developer?id=Nurramware" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-accent hover:underline"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>View on Play Store</span>
-                </a>
-              </div>
-            )}
           </DialogContent>
         )}
       </Dialog>
