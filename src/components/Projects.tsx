@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -13,6 +14,24 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Es Teh Solo Delivery",
+      description: "A comprehensive delivery service application designed specifically for Es Teh Solo merchant, featuring complete order management, real-time tracking, and seamless payment integration for traditional Indonesian tea beverages.",
+      keyFeatures: [
+        "User-friendly mobile app for customers to browse and order beverages",
+        "Real-time order tracking with delivery status updates",
+        "Secure payment gateway integration with multiple payment methods",
+        "Administrative dashboard for order management and analytics",
+        "Inventory management system for stock control",
+        "Customer support messaging system",
+        "Delivery route optimization for efficient service"
+      ],
+      technology: "Flutter (Mobile), Laravel (Frontend & Backend), MySQL (Database)",
+      image: "/lovable-uploads/3d5cb927-eef8-48fd-ac10-ed35db432956.png",
+      playstoreLink: null,
+      role: "Full Stack Developer - Solo Development"
+    },
+    {
+      id: 2,
       title: "FlyGaruda UI Revamp",
       description: "Comprehensive redesign of Garuda Indonesia Airlines' mobile application with modern UI/UX principles to enhance user experience and engagement.",
       keyFeatures: [
@@ -24,7 +43,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 2,
+      id: 3,
       title: "Sales Agent Monitoring",
       description: "Enterprise solution developed for Hewlett Packard's sales division to efficiently track and optimize field agent activities.",
       keyFeatures: [
@@ -36,7 +55,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 3,
+      id: 4,
       title: "Fleet Management System",
       description: "Integrated solution facilitating aircraft crew logistics from pick-up to drop-off, comprising four specialized applications for different stakeholders.",
       keyFeatures: [
@@ -50,7 +69,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 4,
+      id: 5,
       title: "Sarmini Mbokdhe",
       description: "Comprehensive e-commerce platform facilitating direct-to-consumer grocery delivery with integrated logistics and payment solutions.",
       keyFeatures: [
@@ -64,7 +83,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 5,
+      id: 6,
       title: "Mentari Assessment",
       description: "Mental health assessment application providing personalized evaluations and evidence-based recommendations for users' wellbeing.",
       keyFeatures: [
@@ -112,13 +131,22 @@ const Projects = () => {
                     <CardContent>
                       <h4 className="text-sm font-medium text-blue-accent mb-2">Key Features:</h4>
                       <ul className="list-disc list-inside text-dark-secondary space-y-1 text-sm">
-                        {project.keyFeatures.map((feature, index) => (
+                        {project.keyFeatures.slice(0, 3).map((feature, index) => (
                           <li key={index}>{feature}</li>
                         ))}
+                        {project.keyFeatures.length > 3 && (
+                          <li className="text-blue-accent">And {project.keyFeatures.length - 3} more...</li>
+                        )}
                       </ul>
                       <div className="mt-4 pt-4 border-t border-dark-elevated">
                         <h4 className="text-sm font-medium text-blue-accent mb-1">Technology Used:</h4>
                         <p className="text-dark-secondary text-sm">{project.technology}</p>
+                        {project.role && (
+                          <>
+                            <h4 className="text-sm font-medium text-blue-accent mb-1 mt-2">Role:</h4>
+                            <p className="text-dark-secondary text-sm">{project.role}</p>
+                          </>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
@@ -163,6 +191,13 @@ const Projects = () => {
               <h3 className="text-xl font-semibold text-dark-text mb-2">Technology Stack</h3>
               <p className="text-dark-secondary">{selectedProject.technology}</p>
             </div>
+
+            {selectedProject.role && (
+              <div className="mt-6">
+                <h3 className="text-xl font-semibold text-dark-text mb-2">My Role</h3>
+                <p className="text-dark-secondary">{selectedProject.role}</p>
+              </div>
+            )}
           </DialogContent>
         )}
       </Dialog>
