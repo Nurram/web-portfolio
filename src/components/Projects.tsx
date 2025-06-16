@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -15,15 +14,13 @@ const Projects = () => {
     {
       id: 1,
       title: "Es Teh Solo Delivery",
-      description: "A comprehensive delivery service application designed specifically for Es Teh Solo merchant, featuring complete order management, real-time tracking, and seamless payment integration for traditional Indonesian tea beverages.",
+      description: "A comprehensive delivery service application designed specifically for Es Teh Solo merchant, featuring complete order management, real-time tracking, and cash-on-delivery support for traditional Indonesian tea beverages.",
       keyFeatures: [
         "User-friendly mobile app for customers to browse and order beverages",
         "Real-time order tracking with delivery status updates",
-        "Secure payment gateway integration with multiple payment methods",
+        "Cash on delivery and takeaway order management",
         "Administrative dashboard for order management and analytics",
-        "Inventory management system for stock control",
-        "Customer support messaging system",
-        "Delivery route optimization for efficient service"
+        "Inventory management system for stock control"
       ],
       technology: "Flutter (Mobile), Laravel (Frontend & Backend), MySQL (Database)",
       image: "/lovable-uploads/3d5cb927-eef8-48fd-ac10-ed35db432956.png",
