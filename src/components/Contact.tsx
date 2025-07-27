@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Link as LinkIcon } from 'lucide-react';
+import { Github, Linkedin, Mail, Link as LinkIcon, Phone } from 'lucide-react';
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -48,6 +48,19 @@ const Contact = () => {
               </p>
               
               <div className="space-y-5 mt-8">
+                <a 
+                  href="tel:+6282387087503"
+                  className="flex items-center group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-dark-elevated flex items-center justify-center mr-4 group-hover:bg-blue-accent/20 transition-colors duration-300">
+                    <Phone size={18} className="text-blue-accent" />
+                  </div>
+                  <div>
+                    <p className="font-medium group-hover:text-blue-accent transition-colors duration-300">Phone</p>
+                    <p className="text-dark-secondary text-sm">(+62) 82387087503</p>
+                  </div>
+                </a>
+                
                 <a 
                   href="mailto:febiana.nur.ramdani@gmail.com"
                   className="flex items-center group"
