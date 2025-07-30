@@ -18,10 +18,10 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({ className }) => {
         description: "Please wait while we capture the website layout.",
       });
 
-      const doc = new jsPDF('p', 'mm', 'a4');
+      // Use landscape orientation for better visual presentation
+      const doc = new jsPDF('l', 'mm', 'a4'); // landscape, millimeters, A4
       const sections = ['hero', 'about', 'experience', 'achievements', 'projects', 'skills', 'education', 'contact'];
       
-      let currentYPosition = 0;
       const pageHeight = doc.internal.pageSize.height;
       const pageWidth = doc.internal.pageSize.width;
       
@@ -46,34 +46,28 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({ className }) => {
           // Restore the PDF button
           if (pdfButton) pdfButton.style.display = 'block';
           
-          const imgData = canvas.toDataURL('image/png');
-          const imgWidth = pageWidth - 20; // 10mm margin on each side
-          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+          const imgData = canvas.toDataURL('image/jpeg', 0.95); // Use JPEG for better compression
           
-          // Check if we need a new page
-          if (currentYPosition + imgHeight > pageHeight - 20 && currentYPosition > 0) {
+          // Fill entire page with no margins
+          const imgWidth = pageWidth;
+          const imgHeight = pageHeight;
+          
+          // Add new page for each section (except first)
+          if (i > 0) {
             doc.addPage();
-            currentYPosition = 10;
           }
           
-          // Add section to PDF
-          doc.addImage(imgData, 'PNG', 10, currentYPosition, imgWidth, imgHeight);
-          currentYPosition += imgHeight + 10;
-          
-          // Add new page if not the last section
-          if (i < sections.length - 1) {
-            doc.addPage();
-            currentYPosition = 0;
-          }
+          // Add section to PDF with no margins, filling entire page
+          doc.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
         }
       }
       
       // Generate and download
-      doc.save('portfolio-complete.pdf');
+      doc.save('portfolio-professional.pdf');
       
       toast({
         title: "PDF Generated Successfully",
-        description: "Your complete portfolio PDF has been downloaded with the original web design.",
+        description: "Your professional portfolio PDF has been downloaded in landscape format with seamless layout.",
       });
     } catch (error) {
       console.error('Error generating PDF:', error);
