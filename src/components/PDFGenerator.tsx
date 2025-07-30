@@ -1,6 +1,7 @@
 
 import React from 'react';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
@@ -10,68 +11,69 @@ interface PDFGeneratorProps {
 }
 
 const PDFGenerator: React.FC<PDFGeneratorProps> = ({ className }) => {
-  const generatePDF = () => {
+  const generatePDF = async () => {
     try {
-      const doc = new jsPDF();
-      
-      // Add title
-      doc.setFontSize(20);
-      doc.text('Portfolio Summary', 20, 30);
-      
-      // Add personal info
-      doc.setFontSize(12);
-      doc.text('Full Stack Developer Portfolio', 20, 50);
-      doc.text('Specializing in Flutter Mobile Development and Laravel Backend', 20, 60);
-      
-      // Add projects section
-      doc.setFontSize(16);
-      doc.text('Featured Projects:', 20, 80);
-      
-      doc.setFontSize(10);
-      let yPosition = 95;
-      
-      // Add project details
-      const projects = [
-        {
-          title: 'Es Teh Solo Delivery',
-          description: 'Comprehensive delivery service app for traditional Indonesian tea beverages',
-          tech: 'Flutter, Laravel, MySQL'
-        },
-        {
-          title: 'FlyGaruda UI Revamp',
-          description: 'Modern redesign of Garuda Indonesia Airlines mobile application',
-          tech: 'Flutter'
-        },
-        {
-          title: 'Sales Agent Monitoring',
-          description: 'Enterprise solution for HP sales division to track field agent activities',
-          tech: 'Flutter'
-        }
-      ];
-      
-      projects.forEach((project) => {
-        doc.setFontSize(12);
-        doc.text(`• ${project.title}`, 25, yPosition);
-        doc.setFontSize(10);
-        doc.text(`  ${project.description}`, 25, yPosition + 8);
-        doc.text(`  Technology: ${project.tech}`, 25, yPosition + 16);
-        yPosition += 30;
+      toast({
+        title: "Generating PDF...",
+        description: "Please wait while we capture the website layout.",
       });
+
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const sections = ['hero', 'about', 'experience', 'achievements', 'projects', 'skills', 'education', 'contact'];
       
-      // Add skills section
-      doc.setFontSize(16);
-      doc.text('Technical Skills:', 20, yPosition + 10);
+      let currentYPosition = 0;
+      const pageHeight = doc.internal.pageSize.height;
+      const pageWidth = doc.internal.pageSize.width;
       
-      doc.setFontSize(10);
-      const skills = 'Flutter, Dart, Laravel, PHP, MySQL, JavaScript, React, Node.js, Git, REST APIs';
-      doc.text(skills, 20, yPosition + 25);
+      for (let i = 0; i < sections.length; i++) {
+        const sectionId = sections[i];
+        const element = document.getElementById(sectionId) || document.querySelector(`[id="${sectionId}"]`);
+        
+        if (element) {
+          // Hide the floating PDF button temporarily
+          const pdfButton = document.querySelector('.fixed.bottom-6.right-6') as HTMLElement;
+          if (pdfButton) pdfButton.style.display = 'none';
+          
+          const canvas = await html2canvas(element, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#0F0F23',
+            width: element.scrollWidth,
+            height: element.scrollHeight,
+          });
+          
+          // Restore the PDF button
+          if (pdfButton) pdfButton.style.display = 'block';
+          
+          const imgData = canvas.toDataURL('image/png');
+          const imgWidth = pageWidth - 20; // 10mm margin on each side
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+          
+          // Check if we need a new page
+          if (currentYPosition + imgHeight > pageHeight - 20 && currentYPosition > 0) {
+            doc.addPage();
+            currentYPosition = 10;
+          }
+          
+          // Add section to PDF
+          doc.addImage(imgData, 'PNG', 10, currentYPosition, imgWidth, imgHeight);
+          currentYPosition += imgHeight + 10;
+          
+          // Add new page if not the last section
+          if (i < sections.length - 1) {
+            doc.addPage();
+            currentYPosition = 0;
+          }
+        }
+      }
       
       // Generate and download
-      doc.save('portfolio-summary.pdf');
+      doc.save('portfolio-complete.pdf');
       
       toast({
         title: "PDF Generated Successfully",
-        description: "Your portfolio PDF has been downloaded.",
+        description: "Your complete portfolio PDF has been downloaded with the original web design.",
       });
     } catch (error) {
       console.error('Error generating PDF:', error);
