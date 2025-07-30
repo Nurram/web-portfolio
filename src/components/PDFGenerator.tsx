@@ -166,14 +166,25 @@ Passionate about creating user-friendly applications with clean, maintainable co
       doc.text('EDUCATION & CERTIFICATIONS', 20, yPosition);
       yPosition += 8;
       
+      // Education
       doc.setFontSize(11);
-      doc.text('• Bachelor of Computer Science | Universitas Sebelas Maret (2021)', 20, yPosition);
+      doc.setFont('helvetica', 'bold');
+      doc.text('• Bachelor of Informatics | Universitas Muhammadiyah Surakarta (2015-2019)', 20, yPosition);
+      yPosition += 8;
+      
+      // Professional Certificates
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text('Professional Certificates:', 20, yPosition);
       yPosition += 5;
-      doc.text('• Flutter Development Certification | Google Developers', 20, yPosition);
+      
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.text('• Android Jetpack Compose: The Comprehensive Bootcamp | Udemy (2023)', 20, yPosition);
       yPosition += 5;
-      doc.text('• Laravel Professional Certification | Laravel', 20, yPosition);
+      doc.text('• Flutter & Dart - The Complete Guide | Udemy (2022)', 20, yPosition);
       yPosition += 5;
-      doc.text('• AWS Cloud Practitioner Certification', 20, yPosition);
+      doc.text('• Belajar Dasar Manajemen Proyek | Dicoding Indonesia (2021)', 20, yPosition);
       
       // Footer
       doc.setFontSize(8);
