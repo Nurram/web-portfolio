@@ -44,7 +44,7 @@ const PDFGenerator: React.FC<PDFGeneratorProps> = ({ className }) => {
       doc.setFontSize(10);
       doc.setTextColor(80, 80, 80);
       doc.text('Phone: (+62) 82387087503 | Email: febiana.nur.ramdani@gmail.com', margin, yPosition);
-      doc.text('Portfolio: https://play.google.com/store/apps/developer?id=Nurramware', margin, yPosition + 4);
+      doc.text('Portfolio: https://nurramdanif.vercel.app', margin, yPosition + 4);
       yPosition += 15;
 
       // Professional Summary
@@ -386,7 +386,7 @@ I'm passionate about creating intuitive user experiences and solving complex pro
       // Footer on last page
       doc.setFontSize(8);
       doc.setTextColor(100, 100, 100);
-      doc.text('Portfolio: https://play.google.com/store/apps/developer?id=Nurramware', margin, pageHeight - 15);
+      doc.text('Portfolio: https://nurramdanif.vercel.app', margin, pageHeight - 15);
       doc.text('Generated on: ' + new Date().toLocaleDateString(), margin, pageHeight - 10);
 
       doc.save('Febiana-Nur-Ramdani-Complete-Resume.pdf');
