@@ -220,10 +220,10 @@ I'm passionate about creating intuitive user experiences and solving complex pro
 
       const projects = [
         {
-          title: 'Play Store Published Apps',
+          title: 'Mobile Application Portfolio',
           tech: 'Flutter, Firebase, Laravel',
-          description: 'Multiple mobile applications published on Google Play Store under "Nurramware" developer account. These apps showcase various functionalities and demonstrate proficiency in mobile development.',
-          achievements: ['Published on Google Play Store', 'User-friendly interface design', 'Positive user feedback']
+          description: 'Multiple mobile applications developed showcasing various functionalities and proficiency in cross-platform mobile development.',
+          achievements: ['Cross-platform development', 'User-friendly interface design', 'Positive user feedback']
         },
         {
           title: 'Enterprise Delivery Management System',
