@@ -26,8 +26,7 @@ const Projects = () => {
         "Data privacy compliance with dedicated privacy policy and data policy pages"
       ],
       technology: "Laravel (Backend), Filament (Admin Panel), Livewire (Interactive Components)",
-      image: "/lovable-uploads/soco-giving-web.png",
-      images: ["/lovable-uploads/soco-giving-web.png", "/lovable-uploads/soco-giving-mobile.png"],
+      image: "/lovable-uploads/soco-giving-screenshot.png",
       playstoreLink: null,
       websiteUrl: "http://voluntrips.socialconnect.id/",
       role: "Full Stack Developer"
