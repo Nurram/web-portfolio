@@ -99,19 +99,6 @@ const Projects = () => {
       image: "https://i.ibb.co.com/fz8pCZ6L/Pasar-Mini-Mbok-Dhe.jpg",
       playstoreLink: null
     },
-    {
-      id: 7,
-      title: "Mentari Assessment",
-      description: "Mental health assessment application providing personalized evaluations and evidence-based recommendations for users' wellbeing.",
-      keyFeatures: [
-        "Comprehensive mental health questionnaires",
-        "Interactive assessment result visualization",
-        "Multimedia learning resources with audio and video content"
-      ],
-      technology: "Flutter (Mobile), Firebase (NoSQL Database)",
-      image: "https://i.ibb.co.com/FkXsnPcM/Mentari-Assesment.jpg",
-      playstoreLink: null
-    }
   ];
 
   return (
