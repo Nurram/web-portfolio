@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { 
   Tooltip,
   TooltipContent,
@@ -13,6 +15,25 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "SoCo Giving - Volunteer Registration Platform",
+      description: "A comprehensive volunteer registration and management platform for Social Connect, enabling organizations to coordinate volunteer activities and connect volunteers with meaningful opportunities. The platform features real-time registration, event management, and volunteer tracking.",
+      keyFeatures: [
+        "User-friendly volunteer registration interface",
+        "Voluntrips event listing and management system",
+        "Real-time event availability and schedule tracking",
+        "Admin dashboard built with Filament for content management",
+        "Responsive design optimized for both desktop and mobile devices",
+        "Data privacy compliance with dedicated privacy policy and data policy pages"
+      ],
+      technology: "Laravel (Backend), Filament (Admin Panel), Livewire (Interactive Components)",
+      image: "/lovable-uploads/soco-giving-desktop.png",
+      images: ["/lovable-uploads/soco-giving-desktop.png"],
+      playstoreLink: null,
+      websiteUrl: "http://voluntrips.socialconnect.id/",
+      role: "Full Stack Developer"
+    },
+    {
+      id: 2,
       title: "Es Teh Solo Delivery",
       description: "A comprehensive delivery service application designed specifically for Es Teh Solo merchant, featuring complete order management, real-time tracking, and cash-on-delivery support for traditional Indonesian tea beverages.",
       keyFeatures: [
@@ -28,7 +49,7 @@ const Projects = () => {
       role: "Full Stack Developer - Solo Development"
     },
     {
-      id: 2,
+      id: 3,
       title: "FlyGaruda UI Revamp",
       description: "Comprehensive redesign of Garuda Indonesia Airlines' mobile application with modern UI/UX principles to enhance user experience and engagement.",
       keyFeatures: [
@@ -40,7 +61,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 3,
+      id: 4,
       title: "Sales Agent Monitoring",
       description: "Enterprise solution developed for Hewlett Packard's sales division to efficiently track and optimize field agent activities.",
       keyFeatures: [
@@ -52,7 +73,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 4,
+      id: 5,
       title: "Fleet Management System",
       description: "Integrated solution facilitating aircraft crew logistics from pick-up to drop-off, comprising four specialized applications for different stakeholders.",
       keyFeatures: [
@@ -66,7 +87,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 5,
+      id: 6,
       title: "Sarmini Mbokdhe",
       description: "Comprehensive e-commerce platform facilitating direct-to-consumer grocery delivery with integrated logistics and payment solutions.",
       keyFeatures: [
@@ -80,7 +101,7 @@ const Projects = () => {
       playstoreLink: null
     },
     {
-      id: 6,
+      id: 7,
       title: "Mentari Assessment",
       description: "Mental health assessment application providing personalized evaluations and evidence-based recommendations for users' wellbeing.",
       keyFeatures: [
@@ -119,7 +140,10 @@ const Projects = () => {
                     </div>
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
-                        {project.title}
+                        <span>{project.title}</span>
+                        {project.websiteUrl && (
+                          <ExternalLink className="h-4 w-4 text-blue-accent" />
+                        )}
                       </CardTitle>
                       <CardDescription className="text-dark-secondary">
                         {project.description}
@@ -160,14 +184,47 @@ const Projects = () => {
       <Dialog open={selectedProject !== null} onOpenChange={(open) => !open && setSelectedProject(null)}>
         {selectedProject && (
           <DialogContent className="bg-dark-surface border-dark-elevated max-w-3xl max-h-[80vh] overflow-y-auto">
-            <DialogTitle className="text-2xl font-bold text-dark-text">{selectedProject.title}</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-dark-text flex items-center justify-between">
+              <span>{selectedProject.title}</span>
+              {selectedProject.websiteUrl && (
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  asChild
+                  className="ml-4"
+                >
+                  <a 
+                    href={selectedProject.websiteUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    Visit Website
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              )}
+            </DialogTitle>
             
             <div className="mt-4 rounded-lg overflow-hidden">
-              <img 
-                src={`${selectedProject.image}?w=800&h=500&auto=format&fit=crop&q=90`} 
-                alt={selectedProject.title}
-                className="w-full h-auto object-cover"
-              />
+              {selectedProject.images && selectedProject.images.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {selectedProject.images.map((img, idx) => (
+                    <img 
+                      key={idx}
+                      src={`${img}?w=800&h=500&auto=format&fit=crop&q=90`} 
+                      alt={`${selectedProject.title} - ${idx + 1}`}
+                      className="w-full h-auto object-cover rounded"
+                    />
+                  ))}
+                </div>
+              ) : (
+                <img 
+                  src={`${selectedProject.image}?w=800&h=500&auto=format&fit=crop&q=90`} 
+                  alt={selectedProject.title}
+                  className="w-full h-auto object-cover"
+                />
+              )}
             </div>
             
             <div className="mt-6">
