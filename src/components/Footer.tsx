@@ -12,7 +12,7 @@ const Footer = () => {
             <a href="#" className="text-xl font-bold tracking-tight text-white">
               <span className="text-blue-accent">F</span>ebiana
             </a>
-            <p className="text-dark-secondary text-sm mt-2">Mobile Developer & Software Engineer</p>
+            <p className="text-dark-secondary text-sm mt-2">Fullstack Engineer</p>
           </div>
           
           <div className="flex space-x-6">
