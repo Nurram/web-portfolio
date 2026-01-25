@@ -20,15 +20,13 @@ const Experience = () => {
                 <p className="text-dark-secondary text-sm">Jan 2022 - Present</p>
               </div>
               <div className="glass-panel p-5 rounded-xl space-y-3">
-                <p className="text-dark-secondary">
-                  Working as a Software Engineer focusing on mobile application development and backend services.
-                </p>
                 <ul className="list-disc list-inside text-dark-secondary space-y-1.5">
-                  <li>Developed and maintained mobile applications using Flutter</li>
-                  <li>Implemented native features using Kotlin and Java when needed</li>
-                  <li>Created Websites and RESTful APIs with PHP Laravel</li>
-                  <li>Optimized database queries in both SQL and NoSQL environments</li>
-                  <li>Collaborated with design teams to create intuitive user interfaces</li>
+                  <li>Lead mobile application development using Flutter framework</li>
+                  <li>Develop native Android applications using Kotlin and Java</li>
+                  <li>Collaborate with cross-functional teams in Agile environment</li>
+                  <li>Mentor junior developers and conduct code reviews</li>
+                  <li>Optimize application performance and user experience</li>
+                  <li>Successfully executed a major Flutter version migration in four applications live in Google Play Store</li>
                 </ul>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 
 const About = () => {
   return (
@@ -13,7 +12,7 @@ const About = () => {
           
           <div className="space-y-6 text-dark-secondary">
             <p className="animate-slide-in">
-              I'm a Software Engineer with <span className="text-blue-accent font-medium">4 years of professional experience</span>, 
+              I'm a Software Engineer with <span className="text-blue-accent font-medium">5+ years of professional experience</span>, 
               specializing in mobile application development using Flutter. My expertise extends to native mobile 
               development with Kotlin and Java, as well as backend and web development using PHP Laravel.
             </p>
@@ -35,7 +34,7 @@ const About = () => {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="card p-6 animate-scale-in" style={{ animationDelay: '0.2s' }}>
               <div className="w-12 h-12 rounded-full bg-blue-accent/20 flex items-center justify-center mb-4">
-                <span className="text-blue-accent text-xl font-bold">4+</span>
+                <span className="text-blue-accent text-xl font-bold">5+</span>
               </div>
               <h3 className="text-lg font-medium mb-2">Years Experience</h3>
               <p className="text-dark-secondary text-sm">Professional software development experience in various domains</p>
@@ -58,18 +57,6 @@ const About = () => {
             </div>
           </div>
           
-          {/* Play Store Link */}
-          <div className="mt-10 flex justify-center">
-            <a 
-              href="https://play.google.com/store/apps/developer?id=Nurramware" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-accent/10 text-blue-accent hover:bg-blue-accent/20 transition-colors"
-            >
-              <ExternalLink className="w-5 h-5" />
-              <span>Check out my work on Play Store</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>

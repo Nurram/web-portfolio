@@ -5,7 +5,7 @@ const Hero = () => {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    const phrases = ["Mobile Developer", "Software Engineer", "Flutter Expert", "Backend Developer"];
+    const phrases = ["Fullstack Engineer", "Software Engineer", "Flutter Expert", "Backend Developer"];
     let currentPhrase = 0;
     let currentChar = 0;
     let isDeleting = false;
@@ -56,10 +56,10 @@ const Hero = () => {
             Febiana Nur Ramdani
           </h1>
           <div className="h-8">
-            <p ref={subtitleRef} className="text-xl md:text-2xl text-dark-secondary font-medium">Mobile Developer</p>
+            <p ref={subtitleRef} className="text-xl md:text-2xl text-dark-secondary font-medium">Fullstack Engineer</p>
           </div>
           <p className="max-w-2xl mt-6 text-dark-secondary animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Software engineer with 4 years of professional experience specializing in mobile app development. 
+            Software engineer with 5+ years of professional experience specializing in mobile app development. 
             Skilled in creating beautiful and functional applications with Flutter and native technologies.
           </p>
           
