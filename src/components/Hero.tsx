@@ -18,8 +18,8 @@ const Hero = () => {
             <p className="text-xl md:text-2xl text-dark-secondary font-medium">Fullstack Engineer</p>
           </div>
           <p className="max-w-2xl mt-6 text-dark-secondary animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Software engineer with 5+ years of professional experience specializing in mobile app development. 
-            Skilled in creating beautiful and functional applications with Flutter and native technologies.
+            Software engineer with 5+ years of professional experience specializing in mobile development with Flutter, 
+            native Android with Kotlin and Java, and backend development using PHP Laravel.
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
