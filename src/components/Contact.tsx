@@ -118,6 +118,21 @@ const Contact = () => {
                     <p className="text-dark-secondary text-sm">fastwork.id/user/nurram</p>
                   </div>
                 </a>
+                
+                <a 
+                  href="https://projects.co.id/public/browse_users/view/9fd618/febiananur" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-dark-elevated flex items-center justify-center mr-4 group-hover:bg-blue-accent/20 transition-colors duration-300">
+                    <LinkIcon size={18} className="text-blue-accent" />
+                  </div>
+                  <div>
+                    <p className="font-medium group-hover:text-blue-accent transition-colors duration-300">Projects.co.id</p>
+                    <p className="text-dark-secondary text-sm">projects.co.id/febiananur</p>
+                  </div>
+                </a>
               </div>
             </div>
             
