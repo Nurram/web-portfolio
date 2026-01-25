@@ -1,48 +1,7 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const Hero = () => {
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    const phrases = ["Fullstack Engineer", "Software Engineer", "Flutter Expert", "Backend Developer"];
-    let currentPhrase = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
-    let pauseEnd = 1500;
-
-    const type = () => {
-      const subtitle = subtitleRef.current;
-      if (!subtitle) return;
-
-      const phrase = phrases[currentPhrase];
-      
-      if (isDeleting) {
-        subtitle.textContent = phrase.substring(0, currentChar - 1);
-        currentChar--;
-        typingSpeed = 50; // Faster when deleting
-      } else {
-        subtitle.textContent = phrase.substring(0, currentChar + 1);
-        currentChar++;
-        typingSpeed = 150; // Slower when typing
-      }
-
-      // Handle transition to next phrase
-      if (!isDeleting && currentChar === phrase.length) {
-        isDeleting = true;
-        typingSpeed = pauseEnd; // Pause at the end of the phrase
-      } else if (isDeleting && currentChar === 0) {
-        isDeleting = false;
-        currentPhrase = (currentPhrase + 1) % phrases.length;
-      }
-
-      setTimeout(type, typingSpeed);
-    };
-
-    setTimeout(type, 1000);
-  }, []);
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       {/* Background blur circles */}
@@ -56,7 +15,7 @@ const Hero = () => {
             Febiana Nur Ramdani
           </h1>
           <div className="h-8">
-            <p ref={subtitleRef} className="text-xl md:text-2xl text-dark-secondary font-medium">Fullstack Engineer</p>
+            <p className="text-xl md:text-2xl text-dark-secondary font-medium">Fullstack Engineer</p>
           </div>
           <p className="max-w-2xl mt-6 text-dark-secondary animate-fade-in" style={{ animationDelay: '0.3s' }}>
             Software engineer with 5+ years of professional experience specializing in mobile app development. 
