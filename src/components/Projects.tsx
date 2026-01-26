@@ -15,6 +15,44 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "FlyGaruda UI Revamp",
+      description: "Comprehensive redesign of Garuda Indonesia Airlines' mobile application with modern UI/UX principles to enhance user experience and engagement.",
+      keyFeatures: [
+        "Streamlined flight booking experience",
+        "Optimized Garuda Miles rewards management"
+      ],
+      technology: "Flutter",
+      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png",
+      playstoreLink: null
+    },
+    {
+      id: 2,
+      title: "Sales Agent Monitoring",
+      description: "Enterprise solution developed for Hewlett Packard's sales division to efficiently track and optimize field agent activities.",
+      keyFeatures: [
+        "Real-time agent check-in/checkout verification",
+        "Geolocation tracking with timestamp verification"
+      ],
+      technology: "Flutter",
+      image: "https://i.ibb.co.com/zWnZmtH2/sam.jpg",
+      playstoreLink: null
+    },
+    {
+      id: 3,
+      title: "Transport Management System",
+      description: "Integrated solution facilitating aircraft crew logistics from pick-up to drop-off, comprising four specialized applications for different stakeholders.",
+      keyFeatures: [
+        "Quality control driver eligibility verification",
+        "Crew transportation request system",
+        "Dispatch coordination interface",
+        "Real-time location tracking between drivers and crew"
+      ],
+      technology: "Flutter",
+      image: "/lovable-uploads/tms-driver.png",
+      playstoreLink: null
+    },
+    {
+      id: 4,
       title: "SoCo Giving - Volunteer Registration Platform",
       description: "A comprehensive volunteer registration and management platform for Social Connect, enabling organizations to coordinate volunteer activities and connect volunteers with meaningful opportunities. The platform features real-time registration, event management, and volunteer tracking.",
       keyFeatures: [
@@ -32,7 +70,7 @@ const Projects = () => {
       role: "Full Stack Developer"
     },
     {
-      id: 2,
+      id: 5,
       title: "Es Teh Solo Delivery",
       description: "A comprehensive delivery service application designed specifically for Es Teh Solo merchant, featuring complete order management, real-time tracking, and cash-on-delivery support for traditional Indonesian tea beverages.",
       keyFeatures: [
@@ -46,44 +84,6 @@ const Projects = () => {
       image: "/lovable-uploads/3d5cb927-eef8-48fd-ac10-ed35db432956.png",
       playstoreLink: null,
       role: "Full Stack Developer - Solo Development"
-    },
-    {
-      id: 3,
-      title: "FlyGaruda UI Revamp",
-      description: "Comprehensive redesign of Garuda Indonesia Airlines' mobile application with modern UI/UX principles to enhance user experience and engagement.",
-      keyFeatures: [
-        "Streamlined flight booking experience",
-        "Optimized Garuda Miles rewards management"
-      ],
-      technology: "Flutter",
-      image: "https://i.ibb.co.com/dwWz0NWY/flyga.png",
-      playstoreLink: null
-    },
-    {
-      id: 4,
-      title: "Sales Agent Monitoring",
-      description: "Enterprise solution developed for Hewlett Packard's sales division to efficiently track and optimize field agent activities.",
-      keyFeatures: [
-        "Real-time agent check-in/checkout verification",
-        "Geolocation tracking with timestamp verification"
-      ],
-      technology: "Flutter",
-      image: "https://i.ibb.co.com/zWnZmtH2/sam.jpg",
-      playstoreLink: null
-    },
-    {
-      id: 5,
-      title: "Fleet Management System",
-      description: "Integrated solution facilitating aircraft crew logistics from pick-up to drop-off, comprising four specialized applications for different stakeholders.",
-      keyFeatures: [
-        "Quality control driver eligibility verification",
-        "Crew transportation request system",
-        "Dispatch coordination interface",
-        "Real-time location tracking between drivers and crew"
-      ],
-      technology: "Flutter",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      playstoreLink: null
     },
     {
       id: 6,
