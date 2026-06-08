@@ -53,6 +53,21 @@ const Projects = () => {
     },
     {
       id: 4,
+      title: "Camp Waste",
+      description: "A collaborative management application built to streamline operations and waste management workflows between campus janitorial staff and the Department of Environmental Health (DLH). The system digitizes reporting, collection logging, and administrative tracking to replace manual coordination with a structured digital record.",
+      keyFeatures: [
+        "Multi-Role Dashboard Architecture: Distinct, dedicated user interfaces tailored to the operational workflows of both cleaning staff and environmental officers",
+        "On-Site Waste Reporting & History: Enables frontline janitors to log newly collected waste, monitor active accumulation data, and access a comprehensive historical audit trail of past cleanups",
+        "Pickup Dispatch & Document Verification: Tools for environmental officers to record dispatch details, verify pickup logs, and manage official supporting documents related to waste disposal",
+        "Secure Authentication Flow: Complete credential management system with secure login, OTP verification, and self-service password recovery workflows"
+      ],
+      technology: "Flutter (Mobile App)",
+      image: "/__l5e/assets-v1/ae6bcd80-5b4f-4e8e-b2fb-cfba59977396/camp-waste.png",
+      playstoreLink: null,
+      role: "Mobile Developer"
+    },
+    {
+      id: 5,
       title: "SoCo Giving - Volunteer Registration Platform",
       description: "A comprehensive volunteer registration and management platform for Social Connect, enabling organizations to coordinate volunteer activities and connect volunteers with meaningful opportunities. The platform features real-time registration, event management, and volunteer tracking.",
       keyFeatures: [
@@ -68,21 +83,6 @@ const Projects = () => {
       playstoreLink: null,
       websiteUrl: "http://voluntrips.socialconnect.id/",
       role: "Full Stack Developer"
-    },
-    {
-      id: 5,
-      title: "Camp Waste",
-      description: "A collaborative management application built to streamline operations and waste management workflows between campus janitorial staff and the Department of Environmental Health (DLH). The system digitizes reporting, collection logging, and administrative tracking to replace manual coordination with a structured digital record.",
-      keyFeatures: [
-        "Multi-Role Dashboard Architecture: Distinct, dedicated user interfaces tailored to the operational workflows of both cleaning staff and environmental officers",
-        "On-Site Waste Reporting & History: Enables frontline janitors to log newly collected waste, monitor active accumulation data, and access a comprehensive historical audit trail of past cleanups",
-        "Pickup Dispatch & Document Verification: Tools for environmental officers to record dispatch details, verify pickup logs, and manage official supporting documents related to waste disposal",
-        "Secure Authentication Flow: Complete credential management system with secure login, OTP verification, and self-service password recovery workflows"
-      ],
-      technology: "Flutter (Mobile App)",
-      image: "/__l5e/assets-v1/ae6bcd80-5b4f-4e8e-b2fb-cfba59977396/camp-waste.png",
-      playstoreLink: null,
-      role: "Mobile Developer"
     },
     {
       id: 6,
