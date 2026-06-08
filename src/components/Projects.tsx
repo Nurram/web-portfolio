@@ -71,19 +71,18 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: "Es Teh Solo Delivery",
-      description: "A comprehensive delivery service application designed specifically for Es Teh Solo merchant, featuring complete order management, real-time tracking, and cash-on-delivery support for traditional Indonesian tea beverages.",
+      title: "Camp Waste",
+      description: "A collaborative management application built to streamline operations and waste management workflows between campus janitorial staff and the Department of Environmental Health (DLH). The system digitizes reporting, collection logging, and administrative tracking to replace manual coordination with a structured digital record.",
       keyFeatures: [
-        "User-friendly mobile app for customers to browse and order beverages",
-        "Real-time order tracking with delivery status updates",
-        "Cash on delivery and takeaway order management",
-        "Administrative dashboard for order management and analytics",
-        "Inventory management system for stock control"
+        "Multi-Role Dashboard Architecture: Distinct, dedicated user interfaces tailored to the operational workflows of both cleaning staff and environmental officers",
+        "On-Site Waste Reporting & History: Enables frontline janitors to log newly collected waste, monitor active accumulation data, and access a comprehensive historical audit trail of past cleanups",
+        "Pickup Dispatch & Document Verification: Tools for environmental officers to record dispatch details, verify pickup logs, and manage official supporting documents related to waste disposal",
+        "Secure Authentication Flow: Complete credential management system with secure login, OTP verification, and self-service password recovery workflows"
       ],
-      technology: "Flutter (Mobile), Laravel (Frontend & Backend), MySQL (Database)",
-      image: "/lovable-uploads/3d5cb927-eef8-48fd-ac10-ed35db432956.png",
+      technology: "Flutter (Mobile App)",
+      image: "/__l5e/assets-v1/ae6bcd80-5b4f-4e8e-b2fb-cfba59977396/camp-waste.png",
       playstoreLink: null,
-      role: "Full Stack Developer - Solo Development"
+      role: "Mobile Developer"
     },
     {
       id: 6,
